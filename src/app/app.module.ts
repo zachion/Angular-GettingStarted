@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
 
+
 @NgModule({
-  declarations: [AppComponent,ProductListComponent],
+  declarations: [AppComponent, ProductListComponent],
   imports: [BrowserModule],
   bootstrap: [AppComponent]
 })
