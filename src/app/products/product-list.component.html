@@ -15,13 +15,13 @@
             </div>
         </div>
         <div class='table-responsive'>
-            <table class='table'>
+            <table class='table' *ngIf='products && products.length' >
                 <thead>
                     <tr>
                         <th>
                             <button class='btn btn-primary'>
-                            Show Image
-                        </button>
+                                Show Image
+                            </button>
                         </th>
                         <th>Product</th>
                         <th>Code</th>
@@ -31,6 +31,14 @@
                         </tr>
                 </thead>
                 <tbody>
+                    <tr *ngFor='let product of products'>
+                        <td></td>
+                        <td>{{ product.productName }}</td>
+                        <td>{{ product.productCode }}</td>
+                        <td>{{ product.releaseDate }}</td>
+                        <td>{{ product.price }}</td>
+                        <td>{{ product.starRating }}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
