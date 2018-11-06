@@ -9,6 +9,7 @@ export class ProductListComponent {
     pageTitle = 'Product List';
     imageWidth = 50;
     imageMargin = 2;
+    showImage = false;
     products: any[] = [
         {
             'productId': 1,
@@ -41,5 +42,9 @@ export class ProductListComponent {
             'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png'
           }
     ];
+
+    toggleImage(): void {
+        this.showImage = !this.showImage;
+    }
 }
 
