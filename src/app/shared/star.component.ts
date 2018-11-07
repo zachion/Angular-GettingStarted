@@ -1,5 +1,4 @@
-import { Component, OnChanges, Input } from '@angular/core';
-import { ConsoleReporter } from 'jasmine';
+import { Component, OnChanges, Input, EventEmitter, Output } from '@angular/core';
 import { createWiresService } from 'selenium-webdriver/firefox';
 
 @Component({
@@ -11,11 +10,12 @@ import { createWiresService } from 'selenium-webdriver/firefox';
 export class StarComponent implements OnChanges {
     @Input() rating: number;
     starWidth: number;
+    @Output() ratingClicked: EventEmitter<string> = new EventEmitter<string>();
     ngOnChanges(): void {
         this.starWidth = this.rating * 75 / 5;
     }
     onClick(): void {
-        console.log(`The rating ${this.rating} was clicked`);
+        this.ratingClicked.emit(`The rating ${this.rating} was clicked`);
     }
 
 }
