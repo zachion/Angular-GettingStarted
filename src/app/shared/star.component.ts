@@ -1,4 +1,6 @@
 import { Component, OnChanges, Input } from '@angular/core';
+import { ConsoleReporter } from 'jasmine';
+import { createWiresService } from 'selenium-webdriver/firefox';
 
 @Component({
     selector: 'pm-star',
@@ -12,4 +14,8 @@ export class StarComponent implements OnChanges {
     ngOnChanges(): void {
         this.starWidth = this.rating * 75 / 5;
     }
+    onClick(): void {
+        console.log(`The rating ${this.rating} was clicked`);
+    }
+
 }
