@@ -38,7 +38,7 @@ export class ProductListComponent implements OnInit {
             product.productName.toLowerCase().indexOf(filterBy) !== -1);
     }
     ngOnInit(): void {
-        this.products = this.productService.getProducts();
+        this.products = this.productService.getProducts(); 
         this.filteredProducts = this.products;
     }
 }
